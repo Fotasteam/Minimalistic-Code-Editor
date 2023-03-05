@@ -11,12 +11,30 @@
     mc:Ignorable="d">
 
     <Grid>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button x:Name="myButton" Click="myButton_Click">Click Me</Button>
-        </StackPanel>
 
-        <TabView>
-            <TabViewItem Tag="item1" Header="item1" IconSource="/Assets/TabViewIcons/"/>
-        </TabView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="48"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid x:Name="AppTitleBar" Background="{ThemeResource AppBarBackgroundThemeBrush}">
+                <Image Source="Assets/cardslogo.png"
+                   HorizontalAlignment="Left" 
+                   Width="16" Height="16" 
+                   Margin="12,0"/>
+                <TextBlock x:Name="AppTitleTextBlock" Text="App title"
+                       TextWrapping="NoWrap"
+                       
+                       VerticalAlignment="Center"
+                       Margin="40,0,0,0"/>
+            </Grid>
+
+            <TabView Margin="140,0,0,0" VerticalAlignment="Bottom" Height="48">
+                <TabViewItem Tag="item1" Header="Item1"/>
+            </TabView>
+        </Grid>
+
     </Grid>
+
 </Window>
