@@ -19,20 +19,15 @@
             </Grid.RowDefinitions>
 
             <Grid x:Name="AppTitleBar" Background="{ThemeResource AppBarBackgroundThemeBrush}">
-                <Image Source="Assets/cardslogo.png"
-                   HorizontalAlignment="Left" 
-                   Width="16" Height="16" 
-                   Margin="12,0"/>
-                <TextBlock x:Name="AppTitleTextBlock" Text="App title"
-                       TextWrapping="NoWrap"
-                       
-                       VerticalAlignment="Center"
-                       Margin="40,0,0,0"/>
+                <TabView Height="48">
+                    <TabViewItem Tag="item1" Header="Item1"/>
+                </TabView>
             </Grid>
 
-            <TabView Margin="140,0,0,0" VerticalAlignment="Bottom" Height="48">
-                <TabViewItem Tag="item1" Header="Item1"/>
-            </TabView>
+        </Grid>
+
+        <Grid Background="{ThemeResource TabViewSelectedItemBorderBrush}">
+            
         </Grid>
 
     </Grid>
