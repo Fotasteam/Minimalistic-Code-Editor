@@ -12,22 +12,19 @@
 
     <Grid>
 
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="48"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-
-            <Grid x:Name="AppTitleBar" Background="{ThemeResource AppBarBackgroundThemeBrush}">
-                <TabView Height="48">
-                    <TabViewItem Tag="item1" Header="Item1"/>
-                </TabView>
-            </Grid>
+        <Grid Background="{ThemeResource SystemControlBackgroundBaseLowBrush}">
 
         </Grid>
 
-        <Grid Background="{ThemeResource TabViewSelectedItemBorderBrush}">
-            
+        <Grid Height="32" VerticalAlignment="Top" x:Name="AppTitleBar" Background="Black">
+            <MenuBar>
+                <MenuBarItem Tag="File" Title="File" >
+                    <MenuFlyoutItem Text="New"/>
+                    <MenuFlyoutItem Text="Open..."/>
+                    <MenuFlyoutItem Text="Save"/>
+                    <MenuFlyoutItem Text="Exit"/>
+                </MenuBarItem>
+            </MenuBar>
         </Grid>
 
     </Grid>

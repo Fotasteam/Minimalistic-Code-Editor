@@ -13,6 +13,8 @@
                 <!-- Other merged dictionaries here -->
             </ResourceDictionary.MergedDictionaries>
             <!-- Other app resources here -->
+            <!--<SolidColorBrush x:Key="WindowCaptionBackground">#212121</SolidColorBrush>
+            <SolidColorBrush x:Key="WindowCaptionForeground">White</SolidColorBrush>-->
         </ResourceDictionary>
     </Application.Resources>
 </Application>
