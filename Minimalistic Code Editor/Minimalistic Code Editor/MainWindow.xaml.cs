@@ -100,5 +100,9 @@ namespace Minimalistic_Code_Editor
             m_AppWindow.TitleBar.SetDragRectangles(dragRectsArray);
         }
 
+        private void MenuFlyoutItem_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }
