@@ -22,6 +22,8 @@ using CommunityToolkit;
 using Microsoft.UI.Windowing;
 using Microsoft.UI;
 using WinRT.Interop;
+using Windows.UI;
+using System.Drawing;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -36,13 +38,6 @@ namespace Minimalistic_Code_Editor
     {
         private Microsoft.UI.Windowing.AppWindow m_AppWindow;
 
-        private Microsoft.UI.Windowing.AppWindow GetAppWindowForCurrentWindow()
-        {
-            IntPtr hWnd = WindowNative.GetWindowHandle(this);
-            WindowId wndId = Win32Interop.GetWindowIdFromWindow(hWnd);
-            return Microsoft.UI.Windowing.AppWindow.GetFromWindowId(wndId);
-        }
-
         public MainWindow()
         {
             this.InitializeComponent();
@@ -50,23 +45,59 @@ namespace Minimalistic_Code_Editor
             //ExtendsContentIntoTitleBar = true;
             //SetTitleBar(AppTitleBar);
 
-            m_AppWindow = GetAppWindowForCurrentWindow();
+            DrawCustomTitleBar();
+        }
+
+        private Microsoft.UI.Windowing.AppWindow GetAppWindowForCurrentWindow()
+        {
+            IntPtr hWnd = WindowNative.GetWindowHandle(this);
+            WindowId wndId = Win32Interop.GetWindowIdFromWindow(hWnd);
+            return Microsoft.UI.Windowing.AppWindow.GetFromWindowId(wndId);
+        }
+
+        private void AppTitleBar_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
             // Check to see if customization is supported.
             // Currently only supported on Windows 11.
+            if (AppWindowTitleBar.IsCustomizationSupported()
+                && m_AppWindow.TitleBar.ExtendsContentIntoTitleBar)
+            {
+                // Update drag region if the size of the title bar changes.
+                SetDragRegionForCustomTitleBar(m_AppWindow);
+            }
+        }
+
+        private void DrawCustomTitleBar()
+        {
             if (AppWindowTitleBar.IsCustomizationSupported())
             {
-                var titleBar = m_AppWindow.TitleBar;
-                //titleBar.SetDragRectangles();
-                // Hide default title bar.
-                titleBar.ExtendsContentIntoTitleBar = true;
+                m_AppWindow = GetAppWindowForCurrentWindow();
+                m_AppWindow.TitleBar.ExtendsContentIntoTitleBar = true;
+
+                m_AppWindow.TitleBar.ButtonBackgroundColor = Windows.UI.Color.FromArgb(0, 33, 33, 33);
+
+                SetDragRegionForCustomTitleBar(m_AppWindow);
             }
-            else
-            {
-                // Title bar customization using these APIs is currently
-                // supported only on Windows 11. In other cases, hide
-                // the custom title bar element.
-                AppTitleBar.Visibility = Visibility.Collapsed;
-            }
+        }
+
+        private void SetDragRegionForCustomTitleBar(AppWindow appWindow)
+        {
+            int menuBarWidth = m_AppWindow.TitleBar.RightInset;
+            MainMenuBar.Margin = new Thickness(0, 0, menuBarWidth + 5, 0);
+
+            int windowMenuBarWidthAndPadding = (int)MainMenuBar.ActualWidth + (int)MainMenuBar.Margin.Right;
+            int dragRegionWidth = m_AppWindow.Size.Width - menuBarWidth;
+
+            Windows.Graphics.RectInt32[] dragRects = Array.Empty<Windows.Graphics.RectInt32>();
+            Windows.Graphics.RectInt32 dragRect;
+
+            dragRect.X = windowMenuBarWidthAndPadding;
+            dragRect.Y = 0;
+            dragRect.Height = (int)AppTitleBar.Height;
+            dragRect.Width = dragRegionWidth;
+
+            Windows.Graphics.RectInt32[] dragRectsArray = dragRects.Append(dragRect).ToArray();
+            m_AppWindow.TitleBar.SetDragRectangles(dragRectsArray);
         }
 
     }

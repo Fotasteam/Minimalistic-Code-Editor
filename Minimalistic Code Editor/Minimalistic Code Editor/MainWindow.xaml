@@ -12,20 +12,30 @@
 
     <Grid>
 
-        <Grid Background="{ThemeResource SystemControlBackgroundBaseLowBrush}">
+        <Grid Background="{ThemeResource SystemControlBackgroundListLowBrush}">
 
         </Grid>
 
-        <Grid Height="32" VerticalAlignment="Top" x:Name="AppTitleBar" Background="Black">
-            <MenuBar>
-                <MenuBarItem Tag="File" Title="File" >
-                    <MenuFlyoutItem Text="New"/>
-                    <MenuFlyoutItem Text="Open..."/>
-                    <MenuFlyoutItem Text="Save"/>
-                    <MenuFlyoutItem Text="Exit"/>
-                </MenuBarItem>
-            </MenuBar>
+        <Grid Height="48" VerticalAlignment="Top" x:Name="AppTitleBar" Background="{ThemeResource SystemControlBackgroundListLowBrush}"
+              SizeChanged="AppTitleBar_SizeChanged">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition x:Name="LeftPaddingColumn" Width="0"/>
+                <ColumnDefinition x:Name="MenuBar" Width="Auto"/>
+                <ColumnDefinition x:Name="LeftDragColumn" Width="*"/>
+                <ColumnDefinition x:Name="RightDragColumn" Width="*"/>
+                <ColumnDefinition x:Name="RightPaddingColumn" Width="0"/>
+            </Grid.ColumnDefinitions>
         </Grid>
+
+        <MenuBar x:Name="MainMenuBar" Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left">
+            <MenuBarItem Tag="File" Title="File" >
+                <MenuFlyoutItem Text="New"/>
+                <MenuFlyoutItem Text="Open..."/>
+                <MenuFlyoutItem Text="Save"/>
+                <MenuFlyoutItem Text="Exit"/>
+            </MenuBarItem>
+        </MenuBar>
 
     </Grid>
 
