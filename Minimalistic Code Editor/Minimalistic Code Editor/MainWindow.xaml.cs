@@ -24,6 +24,9 @@ using Microsoft.UI;
 using WinRT.Interop;
 using Windows.UI;
 using System.Drawing;
+using Windows.Media.Capture;
+using Windows.ApplicationModel.Core;
+using Windows.UI.Popups;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -100,9 +103,20 @@ namespace Minimalistic_Code_Editor
             m_AppWindow.TitleBar.SetDragRectangles(dragRectsArray);
         }
 
-        private void MenuFlyoutItem_Click(object sender, RoutedEventArgs e)
+        private void MenuFlyoutItem_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
         {
-            
+            var selectedItem = sender as MenuFlyoutItem;
+
+            string selectedItemTag = selectedItem.Name;
+            MessageDialog md = new MessageDialog("dziala kurwa");
+            md.ShowAsync();
+            switch (selectedItemTag)
+            {
+                case "Exit":
+                    CoreApplication.Exit();
+
+                    break;
+            }
         }
     }
 }

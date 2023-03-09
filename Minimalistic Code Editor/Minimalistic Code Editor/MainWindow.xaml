@@ -37,9 +37,9 @@
                 <MenuFlyoutItem Text="Save" Click="MenuFlyoutItem_Click"/>
                 <MenuFlyoutItem Text="Save As..." Click="MenuFlyoutItem_Click"/>
                 <MenuFlyoutSeparator/>
-                <MenuFlyoutItem Text="Exit" Click="MenuFlyoutItem_Click"/>
+                <MenuFlyoutItem Text="Exit" Tag="Exit" Click="MenuFlyoutItem_Click"/>
             </MenuBarItem>
-            <MenuBarItem Tag="Edit" Title="Edit" >
+            <MenuBarItem Tag="Edit" Title="Edit">
                 <MenuFlyoutItem Text="Undo"/>
                 <MenuFlyoutItem Text="Redo"/>
                 <MenuFlyoutSeparator/>
