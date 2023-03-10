@@ -49,6 +49,8 @@ namespace Minimalistic_Code_Editor
             //SetTitleBar(AppTitleBar);
 
             DrawCustomTitleBar();
+
+            linesTextBlock.Text = "1\n2\n3\n4\n5\n6\n7\n";
         }
 
         private Microsoft.UI.Windowing.AppWindow GetAppWindowForCurrentWindow()
@@ -108,8 +110,6 @@ namespace Minimalistic_Code_Editor
             var selectedItem = sender as MenuFlyoutItem;
 
             string selectedItemTag = selectedItem.Name;
-            MessageDialog md = new MessageDialog("dziala kurwa");
-            md.ShowAsync();
             switch (selectedItemTag)
             {
                 case "Exit":
