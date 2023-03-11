@@ -10,9 +10,6 @@
     <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
     <UseWinUI>true</UseWinUI>
   </PropertyGroup>
-  <ItemGroup>
-    <None Remove="CodeEditor\CodeEditor.xaml" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Common" Version="8.1.0" />
@@ -23,11 +20,5 @@
 
   <ItemGroup>
     <Folder Include="Assets\TabViewIcons\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Page Update="CodeEditor\CodeEditor.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
 </Project>

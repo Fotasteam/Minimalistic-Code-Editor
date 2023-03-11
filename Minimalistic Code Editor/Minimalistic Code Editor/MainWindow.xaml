@@ -8,7 +8,6 @@
     xmlns:local="using:Minimalistic_Code_Editor"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:codeEditor="using:Minimalistic_Code_Editor.CodeEditor"
     mc:Ignorable="d">
 
     <Grid>
@@ -29,10 +28,14 @@
             </Grid.ColumnDefinitions>
         </Grid>
 
-        <Grid>
-            <codeEditor:CodeEditor/>
+        <Grid Width="Auto" Height="Auto" Margin="0,40,0,30" Background="Transparent">
+            <RichEditBox IsSpellCheckEnabled="False" TextWrapping="Wrap" CanBeScrollAnchor="True"/>
         </Grid>
 
+        <Grid Width="Auto" Height="30" VerticalAlignment="Bottom" Background="{ThemeResource SystemControlBackgroundListLowBrush}">
+            
+        </Grid>
+        
         <MenuBar x:Name="MainMenuBar" Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="Gray">
             <MenuBarItem Tag="File" Title="File">
                 <MenuFlyoutItem Text="New" Click="MenuFlyoutItem_Click"/>

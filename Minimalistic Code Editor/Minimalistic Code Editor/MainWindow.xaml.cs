@@ -27,6 +27,7 @@ using System.Drawing;
 using Windows.Media.Capture;
 using Windows.ApplicationModel.Core;
 using Windows.UI.Popups;
+using Windows.UI.Core;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
