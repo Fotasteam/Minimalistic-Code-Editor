@@ -106,15 +106,13 @@ namespace Minimalistic_Code_Editor
 
         private void MenuFlyoutItem_Click(object sender, Microsoft.UI.Xaml.RoutedEventArgs e)
         {
-            var selectedItem = sender as MenuFlyoutItem;
-
-            string selectedItemTag = selectedItem.Name;
-            switch (selectedItemTag)
+            var selectedFlyoutItem = sender as MenuFlyoutItem;
+            switch (selectedFlyoutItem.Text)
             {
                 case "Exit":
                     CoreApplication.Exit();
-
                     break;
+                    
             }
         }
     }

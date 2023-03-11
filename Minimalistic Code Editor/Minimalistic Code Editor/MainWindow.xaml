@@ -33,19 +33,31 @@
         </Grid>
 
         <Grid Width="Auto" Height="30" VerticalAlignment="Bottom" Background="{ThemeResource SystemControlBackgroundListLowBrush}">
-            
+            <TextBlock x:Name="Status" Text="Ready" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="15"/>
         </Grid>
         
         <MenuBar x:Name="MainMenuBar" Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="Gray">
             <MenuBarItem Tag="File" Title="File">
-                <MenuFlyoutItem Text="New" Click="MenuFlyoutItem_Click"/>
+                <MenuFlyoutItem Text="New" Click="MenuFlyoutItem_Click">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control" Key="N"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
                 <MenuFlyoutSeparator/>
-                <MenuFlyoutItem Text="Open..." Click="MenuFlyoutItem_Click"/>
+                <MenuFlyoutItem Text="Open..." Click="MenuFlyoutItem_Click">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control" Key="O"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
                 <MenuFlyoutSeparator/>
-                <MenuFlyoutItem Text="Save" Click="MenuFlyoutItem_Click"/>
+                <MenuFlyoutItem Text="Save" Click="MenuFlyoutItem_Click">
+                    <MenuFlyoutItem.KeyboardAccelerators>
+                        <KeyboardAccelerator Modifiers="Control" Key="S"/>
+                    </MenuFlyoutItem.KeyboardAccelerators>
+                </MenuFlyoutItem>
                 <MenuFlyoutItem Text="Save As..." Click="MenuFlyoutItem_Click"/>
                 <MenuFlyoutSeparator/>
-                <MenuFlyoutItem Text="Exit" Tag="Exit" Click="MenuFlyoutItem_Click"/>
+                <MenuFlyoutItem Text="Exit"  Tag="Exit" Click="MenuFlyoutItem_Click"/>
             </MenuBarItem>
             <MenuBarItem Tag="Edit" Title="Edit">
                 <MenuFlyoutItem Text="Undo"/>
