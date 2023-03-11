@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33424.131
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "Minimalistic Code Editor (Package)", "Minimalistic Code Editor\Minimalistic Code Editor (Package)\Minimalistic Code Editor (Package).wapproj", "{6DA1E6AE-9810-4BF2-8DE8-122935DB6BDF}"
+Project("{C7167F0D-BC9F-4E6E-AFE1-012C56B48DB5}") = "Minimalistic Notepad (Package)", "Minimalistic Code Editor\Minimalistic Code Editor (Package)\Minimalistic Notepad (Package).wapproj", "{6DA1E6AE-9810-4BF2-8DE8-122935DB6BDF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Minimalistic Code Editor", "Minimalistic Code Editor\Minimalistic Code Editor\Minimalistic Code Editor.csproj", "{AC5E2C5E-E0A2-4F68-BA49-AFB95FC9CCB6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Minimalistic Notepad", "Minimalistic Code Editor\Minimalistic Code Editor\Minimalistic Notepad.csproj", "{AC5E2C5E-E0A2-4F68-BA49-AFB95FC9CCB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
