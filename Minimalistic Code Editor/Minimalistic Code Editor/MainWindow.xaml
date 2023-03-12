@@ -16,6 +16,10 @@
 
         </Grid>
 
+        <Grid x:Name="FindReplaceGrid" Height="50" Width="1000" Margin="0,100,0,0" Background="Yellow" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <
+        </Grid>
+
         <Grid Height="40" VerticalAlignment="Top" x:Name="AppTitleBar" Background="{ThemeResource SystemControlBackgroundListLowBrush}"
               SizeChanged="AppTitleBar_SizeChanged">
 
@@ -35,7 +39,7 @@
         <Grid Width="Auto" Height="30" VerticalAlignment="Bottom" Background="{ThemeResource SystemControlBackgroundListLowBrush}">
             <TextBlock x:Name="Status" Text="Ready" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="15"/>
         </Grid>
-        
+
         <MenuBar x:Name="MainMenuBar" Margin="0,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="Gray">
             <MenuBarItem Tag="File" Title="File">
                 <MenuFlyoutItem Text="New" Click="MenuFlyoutItem_Click">
