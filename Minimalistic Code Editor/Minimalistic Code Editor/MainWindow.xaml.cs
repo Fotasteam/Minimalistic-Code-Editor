@@ -111,6 +111,10 @@ namespace Minimalistic_Code_Editor
             {
                 case "Exit":
                     CoreApplication.Exit();
+                    Status.Text = "Exit";
+                    break;
+                case "Open...":
+                    Status.Text = "Open";
                     break;
                     
             }
