@@ -16,9 +16,25 @@
 
         </Grid>
 
-        <Grid x:Name="FindReplaceGrid" Height="50" Width="1000" Margin="0,100,0,0" Background="Yellow" VerticalAlignment="Top" HorizontalAlignment="Center">
-            <
-        </Grid>
+        <Button Width="200" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" Click="Button_Click"/>
+
+        <StackPanel x:Name="FindReplaceGrid" Height="50" Width="1000" Margin="0,100,0,0" Background="Yellow" VerticalAlignment="Top" HorizontalAlignment="Center">
+            <StackPanel.Resources>
+                <Storyboard x:Name="StoryboardFindReplaceGrid">
+                    <DoubleAnimation Storyboard.TargetName="TranslationFindReplace" Storyboard.TargetProperty="Y" From="0" To="200">
+                        <DoubleAnimation.EasingFunction>
+                            <ExponentialEase Exponent="7" EasingMode="EaseOut" />
+                        </DoubleAnimation.EasingFunction>
+                    </DoubleAnimation>
+                </Storyboard>
+            </StackPanel.Resources>
+        </StackPanel>
+
+        <Rectangle Width="50" Height="50" Fill="{ThemeResource SystemAccentColor}">
+            <Rectangle.RenderTransform>
+                <Transform x:Name="TranslationFindReplace"/>
+            </Rectangle.RenderTransform>
+        </Rectangle>
 
         <Grid Height="40" VerticalAlignment="Top" x:Name="AppTitleBar" Background="{ThemeResource SystemControlBackgroundListLowBrush}"
               SizeChanged="AppTitleBar_SizeChanged">

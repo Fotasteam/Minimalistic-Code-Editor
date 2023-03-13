@@ -28,6 +28,7 @@ using Windows.Media.Capture;
 using Windows.ApplicationModel.Core;
 using Windows.UI.Popups;
 using Windows.UI.Core;
+using Microsoft.UI.Xaml.Media.Animation;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -118,6 +119,13 @@ namespace Minimalistic_Code_Editor
                     break;
                     
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            StoryboardFindReplaceGrid.Children[0].SetValue(DoubleAnimation.FromProperty, TranslationFindReplace.Y);
+            StoryboardFindReplaceGrid.Children[0].SetValue(DoubleAnimation.ToProperty, TranslationFindReplace.Y > 0 ? 0 : 200);
+            StoryboardFindReplaceGrid.Begin();
         }
     }
 }
