@@ -30,12 +30,6 @@
             </StackPanel.Resources>
         </StackPanel>
 
-        <Rectangle Width="50" Height="50" Fill="{ThemeResource SystemAccentColor}">
-            <Rectangle.RenderTransform>
-                <Transform x:Name="TranslationFindReplace"/>
-            </Rectangle.RenderTransform>
-        </Rectangle>
-
         <Grid Height="40" VerticalAlignment="Top" x:Name="AppTitleBar" Background="{ThemeResource SystemControlBackgroundListLowBrush}"
               SizeChanged="AppTitleBar_SizeChanged">
 
@@ -48,9 +42,9 @@
             </Grid.ColumnDefinitions>
         </Grid>
 
-        <Grid Width="Auto" Height="Auto" Margin="0,40,0,30" Background="Transparent">
+        <!--<Grid Width="Auto" Height="Auto" Margin="0,40,0,30" Background="Transparent">
             <RichEditBox IsSpellCheckEnabled="False" TextWrapping="Wrap" CanBeScrollAnchor="True"/>
-        </Grid>
+        </Grid>-->
 
         <Grid Width="Auto" Height="30" VerticalAlignment="Bottom" Background="{ThemeResource SystemControlBackgroundListLowBrush}">
             <TextBlock x:Name="Status" Text="Ready" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="15"/>

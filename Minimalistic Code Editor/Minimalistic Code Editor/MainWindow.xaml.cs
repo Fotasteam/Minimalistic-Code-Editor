@@ -123,8 +123,8 @@ namespace Minimalistic_Code_Editor
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            StoryboardFindReplaceGrid.Children[0].SetValue(DoubleAnimation.FromProperty, TranslationFindReplace.Y);
-            StoryboardFindReplaceGrid.Children[0].SetValue(DoubleAnimation.ToProperty, TranslationFindReplace.Y > 0 ? 0 : 200);
+            //StoryboardFindReplaceGrid.Children[0].SetValue(DoubleAnimation.FromProperty, TranslationFindReplace.Y);
+            //StoryboardFindReplaceGrid.Children[0].SetValue(DoubleAnimation.ToProperty, TranslationFindReplace.Y > 0 ? 0 : 200);
             StoryboardFindReplaceGrid.Begin();
         }
     }
