@@ -29,6 +29,7 @@ using Windows.ApplicationModel.Core;
 using Windows.UI.Popups;
 using Windows.UI.Core;
 using Microsoft.UI.Xaml.Media.Animation;
+using System.Threading;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -123,8 +124,30 @@ namespace Minimalistic_Code_Editor
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //StoryboardFindReplaceGrid.Children[0].SetValue(DoubleAnimation.FromProperty, TranslationFindReplace.Y);
-            //StoryboardFindReplaceGrid.Children[0].SetValue(DoubleAnimation.ToProperty, TranslationFindReplace.Y > 0 ? 0 : 200);
+            if (FindReplaceGrid.Visibility == Visibility.Visible)
+            {
+                StoryboardFindReplaceGrid.Children[0].SetValue(DoubleAnimation.FromProperty, TranslationFindReplace.Y > 0 ? 0 : -200);
+                StoryboardFindReplaceGrid.Children[0].SetValue(DoubleAnimation.ToProperty, TranslationFindReplace.Y);
+            }
+            else
+            {
+                FindReplaceGrid.Visibility = Visibility.Visible;
+                StoryboardFindReplaceGrid.Children[0].SetValue(DoubleAnimation.FromProperty, TranslationFindReplace.Y);
+                StoryboardFindReplaceGrid.Children[0].SetValue(DoubleAnimation.ToProperty, TranslationFindReplace.Y > 0 ? 0 : -200);
+            }
+
+            StoryboardFindReplaceGrid.Begin();
+            //FindReplaceGrid.Visibility = Visibility.Collapsed;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            FindReplaceGrid.Visibility = Visibility.Visible;
+            StoryboardFindReplaceGrid.Children[0].SetValue(DoubleAnimation.FromProperty, TranslationFindReplace.Y);
+            StoryboardFindReplaceGrid.Children[0].SetValue(DoubleAnimation.ToProperty, TranslationFindReplace.Y > 0 ? 0 : -200);
+
+            //znika i nie wraca?
+
             StoryboardFindReplaceGrid.Begin();
         }
     }
