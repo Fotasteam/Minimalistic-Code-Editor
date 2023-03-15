@@ -124,30 +124,19 @@ namespace Minimalistic_Code_Editor
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (FindReplaceGrid.Visibility == Visibility.Visible)
+            //zastapic opacity czyms innym, chociazby booleanem
+            if (FindReplaceGrid.Opacity == 0)
             {
                 StoryboardFindReplaceGrid.Children[0].SetValue(DoubleAnimation.FromProperty, TranslationFindReplace.Y > 0 ? 0 : -200);
                 StoryboardFindReplaceGrid.Children[0].SetValue(DoubleAnimation.ToProperty, TranslationFindReplace.Y);
+                FindReplaceGrid.Opacity = 1;
             }
             else
             {
-                FindReplaceGrid.Visibility = Visibility.Visible;
+                FindReplaceGrid.Opacity = 0;
                 StoryboardFindReplaceGrid.Children[0].SetValue(DoubleAnimation.FromProperty, TranslationFindReplace.Y);
-                StoryboardFindReplaceGrid.Children[0].SetValue(DoubleAnimation.ToProperty, TranslationFindReplace.Y > 0 ? 0 : -200);
+                StoryboardFindReplaceGrid.Children[0].SetValue(DoubleAnimation.ToProperty, TranslationFindReplace.Y > 0 ? 0 : 200);
             }
-
-            StoryboardFindReplaceGrid.Begin();
-            //FindReplaceGrid.Visibility = Visibility.Collapsed;
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            FindReplaceGrid.Visibility = Visibility.Visible;
-            StoryboardFindReplaceGrid.Children[0].SetValue(DoubleAnimation.FromProperty, TranslationFindReplace.Y);
-            StoryboardFindReplaceGrid.Children[0].SetValue(DoubleAnimation.ToProperty, TranslationFindReplace.Y > 0 ? 0 : -200);
-
-            //znika i nie wraca?
-
             StoryboardFindReplaceGrid.Begin();
         }
     }

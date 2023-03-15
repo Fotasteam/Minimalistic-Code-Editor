@@ -17,7 +17,6 @@
         </Grid>
 
         <Button Width="200" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" Click="Button_Click"/>
-        <Button Width="200" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,200,0,0" Click="Button_Click_1"/>
 
         <StackPanel x:Name="FindReplaceGrid" Height="50" Width="1000" Margin="0,100,0,0" Background="Yellow" VerticalAlignment="Top" HorizontalAlignment="Center">
             <StackPanel.Resources>
@@ -31,7 +30,7 @@
             </StackPanel.Resources>
             <StackPanel.RenderTransform>
                 <TranslateTransform x:Name="TranslationFindReplace"/>
-            </StackPanel.RenderTransform>
+            </StackPanel.RenderTransform> 
             <TextBlock Text="Find and replace"/>
             <TextBox PlaceholderText="Enter text to find"/>
             <TextBox PlaceholderText="Enter text to replace with"/>
