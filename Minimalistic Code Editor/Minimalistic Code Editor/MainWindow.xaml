@@ -18,7 +18,7 @@
 
         <Button Width="200" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" Click="Button_Click"/>
 
-        <StackPanel x:Name="FindReplaceGrid" Height="50" Width="1000" Margin="0,100,0,0" Background="Yellow" VerticalAlignment="Top" HorizontalAlignment="Center">
+        <StackPanel x:Name="FindReplaceGrid" Height="50" Width="1000" Margin="0,100,0,0" Background="{ThemeResource SystemControlBackgroundListLowBrush}" VerticalAlignment="Top" HorizontalAlignment="Center">
             <StackPanel.Resources>
                 <Storyboard x:Name="StoryboardFindReplaceGrid">
                     <DoubleAnimation Storyboard.TargetName="TranslationFindReplace" Storyboard.TargetProperty="Y" From="0" To="100">
@@ -31,8 +31,8 @@
             <StackPanel.RenderTransform>
                 <TranslateTransform x:Name="TranslationFindReplace"/>
             </StackPanel.RenderTransform> 
-            <TextBlock Text="Find and replace"/>
-            <TextBox PlaceholderText="Enter text to find"/>
+            <TextBlock HorizontalAlignment="Center" Width="200" Text="Find and replace"/>
+            <TextBox HorizontalAlignment="Center" Width="200" PlaceholderText="Enter text to find" TextChanged="TextBox_TextChanged"/>
             <TextBox PlaceholderText="Enter text to replace with"/>
         </StackPanel>
 
@@ -48,9 +48,9 @@
             </Grid.ColumnDefinitions>
         </Grid>
 
-        <!--<Grid Width="Auto" Height="Auto" Margin="0,40,0,30" Background="Transparent">
-            <RichEditBox IsSpellCheckEnabled="False" TextWrapping="Wrap" CanBeScrollAnchor="True"/>
-        </Grid>-->
+        <Grid Width="Auto" Height="Auto" Margin="0,40,0,30" Background="Transparent">
+            <RichEditBox x:Name="EditorRichEditBox" IsSpellCheckEnabled="False" TextWrapping="Wrap" CanBeScrollAnchor="True"/>
+        </Grid>
 
         <Grid Width="Auto" Height="30" VerticalAlignment="Bottom" Background="{ThemeResource SystemControlBackgroundListLowBrush}">
             <TextBlock x:Name="Status" Text="Ready" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="15"/>

@@ -139,5 +139,10 @@ namespace Minimalistic_Code_Editor
             }
             StoryboardFindReplaceGrid.Begin();
         }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
